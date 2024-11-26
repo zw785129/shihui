@@ -318,7 +318,7 @@ const translations = {
         
         agriculture_detail1: "Ajuste de pH do solo",
         agriculture_detail2: "Controle de pragas e doenças",
-        agriculture_detail3: "Produção de fertilizantes org��nicos",
+        agriculture_detail3: "Produção de fertilizantes orgânicos",
         
         environmental_detail1: "Dessulfurização de gases industriais",
         environmental_detail2: "Ajuste de pH de águas residuais",

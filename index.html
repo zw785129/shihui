@@ -136,23 +136,25 @@
         .social-row {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
         }
 
         .qr-row .social-item {
             flex: 0 1 300px;
             padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .link-row .social-item {
-            flex: 0 1 280px;
+            flex: 0 1 300px;
             padding: 20px;
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         /* 响应式设计 */
@@ -240,12 +242,16 @@
             text-decoration: none;
             color: #fff;
             font-weight: 500;
-            margin-top: 15px;
+            margin-top: auto;
             transition: all 0.3s ease;
+            font-size: 14px;
+            width: fit-content;
+            align-self: center;
         }
 
         .facebook .social-link {
             background-color: #1877F2;
+            margin-top: auto;
         }
 
         .instagram .social-link {
@@ -262,7 +268,7 @@
             background: rgba(0,0,0,0.03);
             padding: 10px;
             border-radius: 6px;
-            margin: 15px 0;
+            margin: 12px 0;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
@@ -391,18 +397,35 @@
         .social-item.email {
             background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
             border-top: 4px solid #EA4335;
+            position: relative;
+            display: flex;
+            flex-direction: column;
         }
-        
+
         .social-item.email i {
             color: #EA4335;
         }
 
-        .email .social-link {
+        .social-item.email .social-link {
             background-color: #EA4335;
+            margin-top: auto;
         }
 
-        .email .social-link:hover {
-            background-color: #d33426;
+        .social-item.email .social-link:hover {
+            background-color: #EA4335;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(234, 67, 53, 0.2);
+        }
+
+        .email-tip {
+            margin: 10px 0 15px 0;
+        }
+
+        /* 针对葡萄牙语等长文本的特殊处理 */
+        [lang="pt"] .social-item.email .social-link,
+        [lang="es"] .social-item.email .social-link {
+            padding: 8px 16px;
+            font-size: 14px;
         }
 
         .btn-primary {
@@ -586,9 +609,9 @@
             }
 
             .social-item {
-                width: 90%;  /* 调整宽度 */
-                max-width: none;  /* 移除最大宽度限制 */
-                margin: 10px auto;
+                width: 100%;
+                max-width: 320px;
+                margin: 15px auto;
             }
 
             .qr-wrapper {
@@ -644,7 +667,7 @@
         @media (max-width: 768px) {
             .qr-row .social-item {
                 width: 100%;
-                max-width: 320px;  /* 增加容器宽度 */
+                max-width: 320px;  /* 增加容器宽 */
                 margin: 10px auto;
                 padding: 20px;
             }
@@ -693,24 +716,24 @@
 
         /* 美化二维码按钮样式 */
         .qr-btn {
-            background: linear-gradient(45deg, #07C160, #0AAF4F);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 20px;
             color: white;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
             font-weight: 500;
+            margin-top: auto;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(7, 193, 96, 0.2);
-            position: relative;
-            overflow: hidden;
+            font-size: 14px;
+            width: fit-content;
+            align-self: center;
+            background: linear-gradient(45deg, #07C160, #0AAF4F);
+            border: none;
+            cursor: pointer;
         }
 
         .qr-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(7, 193, 96, 0.3);
-            background: linear-gradient(45deg, #0AAF4F, #07C160);
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(7, 193, 96, 0.2);
         }
 
         .qr-btn:active {
@@ -760,6 +783,77 @@
                 text-align: center;
             }
         }
+
+        /* 添加以下CSS样式 */
+        .email-button {
+            position: relative;
+            z-index: 1;
+            margin-right: 15px; /* 增加右侧间距 */
+        }
+        
+        /* 针对葡萄牙语的特殊调整 */
+        [lang="pt"] .email-button {
+            margin-right: 25px; /* 葡萄牙语界面下增加更多间距 */
+        }
+
+        /* 修改移动端的卡片样式 */
+        @media (max-width: 768px) {
+            /* 调整二维码卡片的样式 */
+            .qr-row .social-item {
+                flex: 0 1 300px;
+                padding: 12px;
+                min-height: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            /* 调整二维码按钮容器 */
+            .qr-wrapper {
+                margin: 3px 0;
+                padding: 0;
+            }
+
+            /* 调整二维码按钮 */
+            .qr-btn {
+                margin: 0;
+                padding: 8px 20px;
+            }
+
+            /* 调整社交账号信息区域 */
+            .social-account {
+                margin: 5px 0;
+                padding: 8px;
+            }
+
+            /* 调整链接类卡片的样式 */
+            .link-row .social-item {
+                min-height: auto;
+                padding: 20px;
+                margin-bottom: 15px;
+            }
+
+            /* 确保所有卡片内容紧凑排列 */
+            .social-item {
+                gap: 10px;
+            }
+
+            /* 调整图标和标题的间距 */
+            .social-item i {
+                margin-bottom: 2px;
+            }
+
+            .social-item h3 {
+                margin: 2px 0;
+            }
+        }
+
+        .qr-btn {
+            margin: 5px 0;
+            padding: 8px 20px;
+            width: fit-content;
+            align-self: center;
+        }
     </style>
 </head>
 <body>
@@ -769,7 +863,7 @@
             <ul>
                 <li><a href="#home" data-translate="nav_home">首页</a></li>
                 <li><a href="#products" data-translate="nav_products">产品展示</a></li>
-                <li><a href="#applications" data-translate="nav_applications">应用领域</a></li>
+                <li><a href="#applications" data-translate="nav_applications">应用领</a></li>
                 <li><a href="#about" data-translate="nav_about">关于我们</a></li>
                 <li><a href="#contact" data-translate="nav_contact">联系我们</a></li>
                 <li class="lang-switch">
@@ -837,7 +931,7 @@
                 <div class="product-text">
                     <h3 data-translate="lime_powder_93">93%熟石灰粉</h3>
                     <ul class="product-uses">
-                        <li><i class="fas fa-check"></i> <span data-translate="construction_grade">建材级：适用于建筑、农业等领</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="construction_grade">建材级：适用于建筑、农业等领域</span></li>
                         <li><i class="fas fa-check"></i> <span data-translate="cost_effective">性价比高：CaO含量≥93%</span></li>
                         <li><i class="fas fa-check"></i> <span data-translate="wide_usage">用途广泛：土壤改良、建材生产</span></li>
                     </ul>
@@ -894,7 +988,7 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Muxungue Slaked lime</h3>
-                    <p data-translate="about_desc">我们是一家专注于<strong>熟石灰和石灰粉生产</strong>的现代化企业，拥有业内领先的生产设备和经验丰富的技术团队。公司位于<strong>莫桑比克索法拉省穆雄盖地区</strong>，占地面积超过<strong>10万平方米</strong>，配备了全自动化生产线和严格的品质管控系统。凭借<strong>50万吨的年产能</strong>和稳定可靠的产品质量，我们已成为<strong>南部非洲地区重要的石灰产品供应商</strong>，为数百家工业、建筑和农业域的企业提供优质的产品和服务</p>
+                    <p data-translate="about_desc">我们是一家专注于<strong>熟石灰和石灰生产</strong>的现代化企业，拥有业内领���的生产设备和经验丰富的技术团队。公司位于<strong>莫桑比克索法拉省穆雄盖地区</strong>，占地面积超过<strong>10万平方米</strong>，配备了全自动化生产线和严格的品质管控系统。凭借<strong>50万吨的年产能</strong>和稳定可靠的产品质量，我们已成为<strong>南部非洲地区重要的石灰产品供应商</strong>，为数百家工业、建筑和农业域的企业提供优质的产品和服务</p>
                     <p data-translate="about_quality">多年来，我们始终坚持<strong>"质量为本、服务至上"</strong>的经营理念，不断引进国际先进技术和管理经验，建立了完善的质量管理体系。我们的产品不仅在本土市场获得广泛认可，还远销周边多个国家，在行业内树立了良好的品牌形象和信誉口碑。</p>
                     <div class="about-features">
                         <div class="feature">
@@ -904,7 +998,7 @@
                         </div>
                         <div class="feature">
                             <i class="fas fa-truck"></i>
-                            <h4 data-translate="fast_delivery">快��配送</h4>
+                            <h4 data-translate="fast_delivery">快配送</h4>
                             <p data-translate="delivery_desc">完善的物流配送网络，保证及时送达</p>
                         </div>
                         <div class="feature">
@@ -1013,7 +1107,7 @@
                     <p><i class="fas fa-award env"></i> <span data-translate="env_cert">环境管理体系认证</span></p>
                     <p><i class="fas fa-star quality"></i> <span data-translate="quality_cert">产品质量检测报告</span></p>
                     <p><i class="fas fa-check-circle safety"></i> <span data-translate="safety_cert">安全生产标准化认证</span></p>
-                    <p><i class="fas fa-shield-alt health"></i> <span data-translate="health_cert">职业健康安全管理体系认证</span></p>
+                    <p><i class="fas fa-shield-alt health"></i> <span data-translate="health_cert">职业健康安全管体系认证</span></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1034,17 +1128,21 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // 初始化 clipboard.js
         var clipboard = new ClipboardJS('.copy-btn');
         
-        // 复制成功回调
         clipboard.on('success', function(e) {
-            // 创建提示元素
+            // 先检查并移除已存在的提示
+            const existingTooltip = e.trigger.querySelector('.copy-tooltip');
+            if (existingTooltip) {
+                existingTooltip.remove();
+            }
+            
+            // 创建新的提示元素
             var tooltip = document.createElement('span');
             tooltip.className = 'copy-tooltip';
             tooltip.textContent = '已复制';
             
-            // 将提示添加到按钮旁边
+            // 添加新提示
             e.trigger.appendChild(tooltip);
             
             // 显示提示
@@ -1063,8 +1161,13 @@
             e.clearSelection();
         });
         
-        // 复制失败回调
         clipboard.on('error', function(e) {
+            // 同样先检查并移除已存在的提示
+            const existingTooltip = e.trigger.querySelector('.copy-tooltip');
+            if (existingTooltip) {
+                existingTooltip.remove();
+            }
+            
             var tooltip = document.createElement('span');
             tooltip.className = 'copy-tooltip';
             tooltip.style.background = 'rgba(244, 67, 54, 0.9)';
