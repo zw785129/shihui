@@ -756,7 +756,7 @@
             box-shadow: 0 2px 10px rgba(37, 211, 102, 0.2);
         }
 
-        /* 移动端底部产品认证样式调整 */
+        /* 移动底部产品认证样式调整 */
         @media (max-width: 768px) {
             .footer-center {
                 text-align: left;
@@ -1399,6 +1399,11 @@
             }
         }
     </style>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <link rel="preconnect" href="https://assets.salesmartly.com">
+    <link rel="dns-prefetch" href="https://assets.salesmartly.com">
+    <link rel="preload" href="https://assets.salesmartly.com/chat/widget/code/fonts/iconfont.15dabac4.woff2" as="font" type="font/woff2" crossorigin>
 </head>
 <body>
     <header>
@@ -1841,106 +1846,8 @@
 
     <script src="js/languages.js"></script>
     <script src="js/main.js"></script>
-    <script>
-    let currentIndex = 0;
-    const slidesWrapper = document.querySelector('.slides-wrapper');
-    const slideCount = document.querySelectorAll('.slides').length;
-    const dots = document.querySelectorAll('.dot');
-
-    function slideNext() {
-        currentIndex = (currentIndex + 1) % slideCount;
-        updateSlidePosition();
-    }
-
-    function updateSlidePosition() {
-        slidesWrapper.style.transform = `translateX(-${currentIndex * 20}%)`;
-        // 更新导航点状态
-        dots.forEach((dot, index) => {
-            dot.classList.toggle('active', index === currentIndex);
-        });
-    }
-
-    // 添加导航点点击事
-    dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            currentIndex = index;
-            updateSlidePosition();
-        });
-    });
-
-    // 自动播放
-    setInterval(slideNext, 5000);
-
-    // 触摸滑动支持
-    let touchStartX = 0;
-    let touchEndX = 0;
-
-    slidesWrapper.addEventListener('touchstart', e => {
-        touchStartX = e.touches[0].clientX;
-    });
-
-    slidesWrapper.addEventListener('touchmove', e => {
-        touchEndX = e.touches[0].clientX;
-    });
-
-    slidesWrapper.addEventListener('touchend', () => {
-        const difference = touchStartX - touchEndX;
-        if (Math.abs(difference) > 50) { // 最小滑动距离
-            if (difference > 0) {
-                // 向左滑
-                currentIndex = (currentIndex + 1) % slideCount;
-            } else {
-                // 向右滑
-                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-            }
-            updateSlidePosition();
-        }
-    });
-    </script>
-
-    <!-- 在 body 标签内底部添加返回顶部按钮 -->
-    <div class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <script>
-    // 返回顶部功能
-    const backToTop = document.getElementById('backToTop');
-
-    // 监滚动事件
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {  // 当页面滚动超过300px时显示按钮
-            backToTop.classList.add('show');
-        } else {
-            backToTop.classList.remove('show');
-        }
-    });
-
-    // 点击返回顶部
-    backToTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'  // 平滑滚动
-        });
-    });
-    </script>
-
-    <script>
-    // 添加导航功能
-    function openNavigation() {
-        // 公司坐标
-        const latitude = -20.36177;
-        const longitude = 33.73928;
-        
-        // 检测设备类型
-        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-            // iOS 设备使用 Apple Maps
-            window.open(`maps://maps.apple.com/?daddr=${latitude},${longitude}`);
-        } else {
-            // 其他设备使用 Google Maps
-            window.open(`https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`);
-        }
-    }
-    </script>
+    
+    <!-- 添加客服系统脚本 -->
+    <script src="https://assets.salesmartly.com/js/project_178388_184508_1732617381.js"></script>
 </body>
 </html>
