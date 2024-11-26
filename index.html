@@ -625,7 +625,7 @@
 
             .qr-wrapper img {
                 width: 100%;  /* 让图片宽度适容器 */
-                max-width: 200px;  /* 设置最大宽度 */
+                max-width: 200px;  /* 设置最宽度 */
                 height: auto;  /* 高度自动调整 */
                 object-fit: contain;
                 margin: 10px auto;
@@ -636,7 +636,7 @@
                 padding: 8px;
             }
 
-            /* 调整卡片内边距 */
+            /* 调整卡片边距 */
             .qr-row .social-item {
                 padding: 20px;
                 margin-bottom: 20px;
@@ -714,7 +714,7 @@
             }
         }
 
-        /* 美化二维码按钮样式 */
+        /* 美化二维码按钮样 */
         .qr-btn {
             display: inline-block;
             padding: 8px 20px;
@@ -791,9 +791,9 @@
             margin-right: 15px; /* 增加右侧间距 */
         }
         
-        /* 针对葡萄牙语的特殊调整 */
+        /* 针对葡萄牙语的特殊整 */
         [lang="pt"] .email-button {
-            margin-right: 25px; /* 葡萄牙语界面下增加更多间距 */
+            margin-right: 25px; /* 葡牙语界面下增加更多间距 */
         }
 
         /* 修改移动端的卡片样式 */
@@ -820,7 +820,7 @@
                 padding: 8px 20px;
             }
 
-            /* 调整社交账号信息区域 */
+            /* 调整交账号信息区域 */
             .social-account {
                 margin: 5px 0;
                 padding: 8px;
@@ -833,7 +833,7 @@
                 margin-bottom: 15px;
             }
 
-            /* ��保所有卡片内容紧凑排列 */
+            /* 保所有卡片内容紧凑排列 */
             .social-item {
                 gap: 10px;
             }
@@ -1175,7 +1175,228 @@
         /* 调整轮播图的z-index，确保它低于语言选择器 */
         .slideshow-section {
             position: relative;
-            z-index: 1;  /* 降低轮播图的层级 */
+            z-index: 1;  /* 降低轮播图层级 */
+        }
+
+        /* 添加新的样式 */
+        .email-button-wrapper {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .social-item.email .social-link {
+            display: inline-block;
+            background-color: #EA4335;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            margin: 5px 0;
+        }
+
+        .social-item.email .social-link:hover {
+            background-color: #D73925;
+        }
+
+        /* 添加新的样式 */
+        .email-button-container {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .social-item.email {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .social-item.email .social-link {
+            display: inline-block;
+            background-color: #EA4335;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            text-decoration: none;
+            text-align: center;
+            margin: 5px auto;
+            width: auto;
+        }
+
+        .social-item.email .social-link:hover {
+            background-color: #D73925;
+            transform: translateY(-2px);
+        }
+
+        .email-button-container {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        /* 修改移动端的邮箱卡片样式 */
+        @media (max-width: 768px) {
+            .social-item.email {
+                padding: 20px;
+                min-height: 450px;  /* 增加卡片最小高度到450px */
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 20px;  /* 增加底部间距 */
+            }
+
+            .social-item.email .social-account {
+                margin: 8px 0;
+            }
+
+            .social-item.email .email-button-container {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .social-item.email .social-link {
+                display: inline-block !important;
+                width: auto;
+                max-width: 200px;
+                margin: 8px auto;
+                padding: 8px 20px;
+                background-color: #EA4335;
+                color: white;
+                border-radius: 20px;
+                text-align: center;
+                text-decoration: none;
+            }
+        }
+
+        .contact-desc {
+            color: #666;
+            font-size: 14px;
+            margin: 10px 0;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .contact-desc {
+                font-size: 13px;
+                margin: 8px 0;
+                padding: 0 10px;
+            }
+        }
+
+        /* 添加地图相关样式 */
+        .footer-map {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .footer-map h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .map-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .address {
+            color: #fff;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .map-container {
+                margin: 0 15px;
+            }
+            
+            .footer-map h4 {
+                font-size: 16px;
+            }
+        }
+
+        /* 导航按钮样式优化 */
+        .nav-btn {
+            background: linear-gradient(45deg, #2193b0, #6dd5ed);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(33, 147, 176, 0.2);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-btn:before {
+            content: '📍';  /* 改用定位图标 */
+            font-size: 16px;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(33, 147, 176, 0.3);
+            background: linear-gradient(45deg, #6dd5ed, #2193b0);
+        }
+
+        .nav-btn:active {
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(33, 147, 176, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .nav-btn {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+            
+            .nav-btn:before {
+                font-size: 14px;
+            }
+        }
+
+        /* 位置信息样式 */
+        .location-info {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px auto;
+            max-width: 600px;
+        }
+
+        .coordinates {
+            color: #fff;
+            font-size: 16px;
+            margin-bottom: 10px;
+            font-family: monospace;
+        }
+
+        .nav-tip {
+            color: #fff;
+            font-size: 14px;
+            margin-top: 15px;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .location-info {
+                margin: 15px;
+                padding: 15px;
+            }
+            
+            .coordinates {
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -1186,9 +1407,12 @@
             <ul>
                 <li><a href="#home" data-translate="nav_home">首页</a></li>
                 <li><a href="#products" data-translate="nav_products">产品展示</a></li>
-                <li><a href="#applications" data-translate="nav_applications">应用领</a></li>
+                <li><a href="#applications" data-translate="nav_applications">应用领域</a></li>
                 <li><a href="#about" data-translate="nav_about">关于我们</a></li>
                 <li><a href="#contact" data-translate="nav_contact">联系我们</a></li>
+                <li class="nav-location">
+                    <button onclick="openNavigation()" class="nav-btn" data-translate="nav_to_us">导航到我们</button>
+                </li>
                 <li class="lang-switch">
                     <div id="language-selector" class="language-selector">
                         <div class="current-language">
@@ -1208,7 +1432,7 @@
                     <img src="images/slide1.jpg" alt="工厂图片1">
                     <div class="slide-caption">
                         <h3 data-translate="slide1_title">优质石灰生产</h3>
-                        <p data-translate="slide1_desc">采用先进工艺，确保产品品质稳定可靠</p>
+                        <p data-translate="slide1_desc">用先进工艺，确保产品品质稳定可靠</p>
                     </div>
                 </div>
                 <div class="slides">
@@ -1221,7 +1445,7 @@
                 <div class="slides">
                     <img src="images/slide3.jpg" alt="工厂图片3">
                     <div class="slide-caption">
-                        <h3 data-translate="slide3_title">独立包装系统</h3>
+                        <h3 data-translate="slide3_title">独立装系统</h3>
                         <p data-translate="slide3_desc">标准化包装流程，确保产品完整性</p>
                     </div>
                 </div>
@@ -1307,7 +1531,7 @@
                 <i class="fas fa-building"></i>
                 <h3 data-translate="construction_field">建筑领域</h3>
                 <div class="application-details">
-                    <p><i class="fas fa-angle-right"></i> <span data-translate="construction_detail1">建筑砂浆和混凝土添加剂</span></p>
+                    <p><i class="fas fa-angle-right"></i> <span data-translate="construction_detail1">建筑砂浆和混凝土添加</span></p>
                     <p><i class="fas fa-angle-right"></i> <span data-translate="construction_detail2">墙体材料生产</span></p>
                     <p><i class="fas fa-angle-right"></i> <span data-translate="construction_detail3">地基土壤稳定剂</span></p>
                 </div>
@@ -1316,7 +1540,7 @@
                 <i class="fas fa-industry"></i>
                 <h3 data-translate="industrial_field">工业领域</h3>
                 <div class="application-details">
-                    <p><i class="fas fa-angle-right"></i> <span data-translate="industrial_detail1">钢铁冶金造渣剂</span></p>
+                    <p><i class="fas fa-angle-right"></i> <span data-translate="industrial_detail1">钢铁冶金造剂</span></p>
                     <p><i class="fas fa-angle-right"></i> <span data-translate="industrial_detail2">化工原料生产</span></p>
                     <p><i class="fas fa-angle-right"></i> <span data-translate="industrial_detail3">工业废水处理</span></p>
                 </div>
@@ -1326,13 +1550,13 @@
                 <h3 data-translate="agriculture_field">农业领域</h3>
                 <div class="application-details">
                     <p><i class="fas fa-angle-right"></i> <span data-translate="agriculture_detail1">土壤酸碱度调节</span></p>
-                    <p><i class="fas fa-angle-right"></i> <span data-translate="agriculture_detail2">农物病虫害防治</span></p>
+                    <p><i class="fas fa-angle-right"></i> <span data-translate="agriculture_detail2">农物病虫害防</span></p>
                     <p><i class="fas fa-angle-right"></i> <span data-translate="agriculture_detail3">有机肥料生产</span></p>
                 </div>
             </div>
             <div class="application-card">
                 <i class="fas fa-recycle"></i>
-                <h3 data-translate="environmental_field">环保领域</h3>
+                <h3 data-translate="environmental_field">环保域</h3>
                 <div class="application-details">
                     <p><i class="fas fa-angle-right"></i> <span data-translate="environmental_detail1">工业废气脱硫处理</span></p>
                     <p><i class="fas fa-angle-right"></i> <span data-translate="environmental_detail2">污水pH值调节</span></p>
@@ -1348,13 +1572,13 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Muxungue Slaked lime</h3>
-                    <p data-translate="about_desc">我们是一家专注于<strong>熟石灰和石灰生产</strong>的现代化企业，拥有业内领的生产设备和经验丰富的术团队。公司位于<strong>莫桑比克索法拉省穆雄盖地区</strong>，占地面积超过<strong>10万平方米</strong>，配备了全自化生产线和格的品质管控系统。凭借<strong>50万吨的年产能</strong>和稳定可靠的产品质量，我们已成为<strong>南部非洲地区重要的石灰产品供应商</strong>，为数百家工业、建筑和农业域的企业提供优质的产品和服务</p>
+                    <p data-translate="about_desc">我们是一家专注于<strong>熟石灰和石灰生产</strong>的现代化企业，拥有业内领的生设备和经验丰富的团队。公司位于<strong>莫桑比克索拉省穆雄盖地区</strong>，占地面积超过<strong>10万平方米</strong>，配备了全自化生产线和格的品质管控系统。凭借<strong>50万吨的年产能</strong>和稳定可靠的产品质量，我们已成为<strong>南部非洲地区重要的石灰产品供应商</strong>，为数百家工业、建筑和农业域的企业提供优质的产品和服务</p>
                     <p data-translate="about_quality">多年来，我们始终坚持<strong>"质量为本、服务至上"</strong>的经营理念，不断引进国际先进技术和管理经验，建立了完善的质量管理体系。我们的产品不仅在本土市场得广泛认可，还远销周边多个国家，在行业内树立了良好的品牌形象和信誉口碑。</p>
                     <div class="about-features">
                         <div class="feature">
                             <i class="fas fa-medal"></i>
                             <h4 data-translate="quality_assurance">质保证</h4>
-                            <p data-translate="quality_desc">严格的质量控制体系，确保产品品质稳定可靠</p>
+                            <p data-translate="quality_desc">严格的质量控制体系，确保产品品稳定可靠</p>
                         </div>
                         <div class="feature">
                             <i class="fas fa-truck"></i>
@@ -1394,29 +1618,39 @@
                     <div class="social-item wechat">
                         <i class="fab fa-weixin"></i>
                         <h3 data-translate="wechat">微信</h3>
+                        <p class="contact-desc" data-translate="wechat_desc">添加我们的销售顾问微信，获取更多产品详情和实时报价</p>
                         <div class="social-account">
-                            <span class="label" data-translate="wechat_id">微信号</span>
+                            <span class="label" data-translate="wechat_number1">① 微信号</span>
                             <span class="account-text">wqx19332027424</span>
                             <button class="copy-btn" data-clipboard-text="wqx19332027424">
                                 <i class="far fa-copy"></i>
                             </button>
                         </div>
-                        <div class="qr-wrapper">
-                            <button class="qr-btn" onclick="showQRCode('wechat')" data-translate="get_qr">点击获取二维码</button>
+                        <div class="social-account">
+                            <span class="label" data-translate="wechat_number2">② 微信号</span>
+                            <span class="account-text">guangyu6071</span>
+                            <button class="copy-btn" data-clipboard-text="guangyu6071">
+                                <i class="far fa-copy"></i>
+                            </button>
                         </div>
                     </div>
                     <div class="social-item whatsapp">
                         <i class="fab fa-whatsapp"></i>
                         <h3>WhatsApp</h3>
+                        <p class="contact-desc" data-translate="whatsapp_desc">联系我们的国际业务代表，了解出口相关事宜</p>
                         <div class="social-account">
-                            <span class="label">WhatsApp</span>
+                            <span class="label" data-translate="whatsapp_number1">① WhatsApp</span>
                             <span class="account-text">+258 868427683</span>
                             <button class="copy-btn" data-clipboard-text="+258 868427683">
                                 <i class="far fa-copy"></i>
                             </button>
                         </div>
-                        <div class="qr-wrapper">
-                            <button class="qr-btn" onclick="showQRCode('whatsapp')" data-translate="get_qr">点击获取二维码</button>
+                        <div class="social-account">
+                            <span class="label" data-translate="whatsapp_number2">② WhatsApp</span>
+                            <span class="account-text">+258 875534862</span>
+                            <button class="copy-btn" data-clipboard-text="+258 875534862">
+                                <i class="far fa-copy"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -1425,27 +1659,40 @@
                     <div class="social-item facebook">
                         <i class="fab fa-facebook"></i>
                         <h3>Facebook</h3>
+                        <p class="contact-desc" data-translate="facebook_desc">关注我们的 Facebook 主页，了解公司最新动态和产品信息</p>
                         <div class="social-account">
                             <span class="label" data-translate="account">账号</span>
-                            <span class="account-text">@MuxungueSlakeLime</span>
-                            <button class="copy-btn" data-clipboard-text="@MuxungueSlakeLime">
+                            <span class="account-text">https://www.facebook.com/profile.php?id=100003553415676&mibextid=ZbWKwL</span>
+                            <button class="copy-btn" data-clipboard-text="https://www.facebook.com/profile.php?id=100003553415676&mibextid=ZbWKwL">
                                 <i class="far fa-copy"></i>
                             </button>
                         </div>
-                        <a href="https://www.facebook.com/share/1DqwnqLBKt/?mibextid=LQQJ4d" class="social-link" target="_blank" data-translate="visit_page">访问主页</a>
+                        <a href="https://www.facebook.com/profile.php?id=100003553415676&mibextid=ZbWKwL" class="social-link" target="_blank" data-translate="visit_page">访问主页</a>
                     </div>
                     <div class="social-item email">
                         <i class="fas fa-envelope"></i>
                         <h3 data-translate="email">电子邮箱</h3>
                         <div class="social-account">
-                            <span class="label" data-translate="email">邮箱</span>
+                            <span class="label" data-translate="email_number1">① 邮箱</span>
                             <span class="account-text">1091132793@qq.com</span>
                             <button class="copy-btn" data-clipboard-text="1091132793@qq.com">
                                 <i class="far fa-copy"></i>
                             </button>
                         </div>
-                        <p class="email-tip" data-translate="email_tip">请确保已打开邮件客户端</p>
-                        <a href="mailto:1091132793@qq.com" class="social-link" data-translate="send_email">发邮件</a>
+                        <div class="email-button-container">
+                            <a href="mailto:1091132793@qq.com" class="social-link" data-translate="send_email1">发送邮件①</a>
+                        </div>
+                        
+                        <div class="social-account">
+                            <span class="label" data-translate="email_number2">② 邮箱</span>
+                            <span class="account-text">603826071@qq.com</span>
+                            <button class="copy-btn" data-clipboard-text="603826071@qq.com">
+                                <i class="far fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="email-button-container">
+                            <a href="mailto:603826071@qq.com" class="social-link" data-translate="send_email2">发送邮件②</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1470,6 +1717,17 @@
                     <p><i class="fas fa-shield-alt health"></i> <span data-translate="health_cert">职业健安全管系认</span></p>
                 </div>
             </div>
+
+            <!-- 添加地图部分 -->
+            <div class="footer-map">
+                <h4 data-translate="company_location">公司位置</h4>
+                <div class="location-info">
+                    <p class="coordinates"><span data-translate="coordinates">坐标</span>: 20°21'42.4"S 33°44'24.0"E</p>
+                    <p class="address" data-translate="company_address">莫桑比克索法拉省穆雄盖地区</p>
+                    <p class="nav-tip" data-translate="nav_tip">复制坐标到谷歌地图即可导航</p>
+                </div>
+            </div>
+
             <div class="footer-bottom">
                 <p data-translate="copyright">© 2024 Muxungue Slaked lime. 版权所有 | 莫桑比克索法拉省穆雄盖地区先的石灰产品供应商</p>
             </div>
@@ -1572,7 +1830,7 @@
         modal.style.display = 'none';
     }
 
-    // 点击弹窗外部关闭弹窗
+    // 点击弹窗外部关闭弹
     window.onclick = function(event) {
         const modal = document.getElementById('qrModal');
         if (event.target === modal) {
@@ -1602,7 +1860,7 @@
         });
     }
 
-    // 添加导航点点击事件
+    // 添加导航点点击事
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             currentIndex = index;
@@ -1649,7 +1907,7 @@
     // 返回顶部功能
     const backToTop = document.getElementById('backToTop');
 
-    // 监听滚动事件
+    // 监滚动事件
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {  // 当页面滚动超过300px时显示按钮
             backToTop.classList.add('show');
@@ -1665,6 +1923,24 @@
             behavior: 'smooth'  // 平滑滚动
         });
     });
+    </script>
+
+    <script>
+    // 添加导航功能
+    function openNavigation() {
+        // 公司坐标
+        const latitude = -20.36177;
+        const longitude = 33.73928;
+        
+        // 检测设备类型
+        if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+            // iOS 设备使用 Apple Maps
+            window.open(`maps://maps.apple.com/?daddr=${latitude},${longitude}`);
+        } else {
+            // 其他设备使用 Google Maps
+            window.open(`https://www.google.com/maps/dir/?api=1&destination=${latitude},${longitude}`);
+        }
+    }
     </script>
 </body>
 </html>
