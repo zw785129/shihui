@@ -101,7 +101,17 @@ const translations = {
         name: '中文',
         flag: 'images/flags/zh.png',
         copy_success: "已复制",
-        copy_fail: "复制失败"
+        copy_fail: "复制失败",
+        slide1_title: '优质石灰生产',
+        slide1_desc: '采用先进工艺，确保产品品质稳定可靠',
+        slide2_title: '现代化生产线',
+        slide2_desc: '全自动化生产设备，提升生产效率',
+        slide3_title: '独立包装系统',
+        slide3_desc: '标准化包装流程，确保产品完整性',
+        slide4_title: '专业装载系统',
+        slide4_desc: '自动化装载设备，提高发货效率',
+        slide5_title: '品质管控体系',
+        slide5_desc: '严格的质量检测流程，确保产品合格'
     },
     en: {
         // Navigation
@@ -205,7 +215,17 @@ const translations = {
         name: 'English',
         flag: 'images/flags/en.png',
         copy_success: "Copied",
-        copy_fail: "Copy failed"
+        copy_fail: "Copy failed",
+        slide1_title: 'Quality Lime Production',
+        slide1_desc: 'Advanced technology ensures stable product quality',
+        slide2_title: 'Modern Production Line',
+        slide2_desc: 'Automated equipment improves production efficiency',
+        slide3_title: 'Independent Packaging System',
+        slide3_desc: 'Standardized packaging process ensures product integrity',
+        slide4_title: 'Professional Loading System',
+        slide4_desc: 'Automated loading equipment improves shipping efficiency',
+        slide5_title: 'Quality Control System',
+        slide5_desc: 'Strict quality inspection process ensures product qualification'
     },
     pt: {
         nav_home: "Início",
@@ -333,6 +353,16 @@ const translations = {
         name: 'Português',
         flag: 'images/flags/pt.png',
         copy_success: "Copiado",
-        copy_fail: "Falha ao copiar"
+        copy_fail: "Falha ao copiar",
+        slide1_title: 'Produção de Cal de Qualidade',
+        slide1_desc: 'Tecnologia avançada garante qualidade estável do produto',
+        slide2_title: 'Linha de Produção Moderna',
+        slide2_desc: 'Equipamento automatizado melhora a eficiência da produção',
+        slide3_title: 'Sistema de Embalagem Independente',
+        slide3_desc: 'Processo padronizado garante a integridade do produto',
+        slide4_title: 'Sistema de Carregamento Profissional',
+        slide4_desc: 'Equipamento automatizado melhora a eficiência do envio',
+        slide5_title: 'Sistema de Controle de Qualidade',
+        slide5_desc: 'Processo rigoroso de inspeção garante a qualificação do produto'
     }
 }; 

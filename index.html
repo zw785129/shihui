@@ -663,7 +663,7 @@
             }
         }
 
-        /* 更新移动的二维码样式 */
+        /* 更新移动的二维码样 */
         @media (max-width: 768px) {
             .qr-row .social-item {
                 width: 100%;
@@ -833,7 +833,7 @@
                 margin-bottom: 15px;
             }
 
-            /* 确保所有卡片内容紧凑排列 */
+            /* ��保所有卡片内容紧凑排列 */
             .social-item {
                 gap: 10px;
             }
@@ -853,6 +853,329 @@
             padding: 8px 20px;
             width: fit-content;
             align-self: center;
+        }
+
+        .factory-showcase {
+            padding: 40px 20px;
+            background: #f5f5f5;
+        }
+
+        .factory-title {
+            text-align: center;
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .factory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .factory-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .factory-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .factory-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .factory-info {
+            padding: 20px;
+        }
+
+        .factory-info h3 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .factory-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .factory-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .factory-item img {
+                height: 200px;
+            }
+        }
+
+        .slideshow-section {
+            padding: 40px 0;
+            background: #f5f5f5;
+            overflow: hidden;
+        }
+
+        .slideshow-container {
+            max-width: 1200px;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slides-wrapper {
+            display: flex;
+            transition: transform 0.5s ease;
+            width: 500%; /* 5张图片，每张占20% */
+        }
+
+        .slides {
+            flex: 0 0 20%; /* 每张图片占wrapper的20% */
+            width: 20%;
+        }
+
+        .slides img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .slides img {
+                height: 300px;
+            }
+        }
+
+        .dots-container {
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            z-index: 2;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dot.active {
+            background-color: #fff;
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 768px) {
+            .dot {
+                height: 8px;
+                width: 8px;
+                margin: 0 4px;
+            }
+        }
+
+        /* 修改 header 的样式 */
+        header {
+            background: linear-gradient(145deg, #2c3e50 0%, #3498db 100%);  /* 恢复渐变背景 */
+            padding: 15px 20px;
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: static;  /* 保持静态定位 */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        .logo {
+            color: #fff;  /* 恢复logo文字颜色 */
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;  /* 恢复导航链接文字颜色 */
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f1c40f;  /* 鼠标悬停时的颜色 */
+        }
+
+        .current-language {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #fff;  /* 语言选择器文字颜色 */
+        }
+
+        .current-flag {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        .slides {
+            position: relative;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 60px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+        .slide-caption h3 {
+            font-size: 24px;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .slide-caption p {
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        @media (max-width: 768px) {
+            .slide-caption {
+                bottom: 40px;
+                padding: 10px;
+            }
+            
+            .slide-caption h3 {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+            
+            .slide-caption p {
+                font-size: 14px;
+            }
+        }
+
+        .back-to-top {
+            position: fixed;
+            right: 30px;
+            bottom: 80px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(145deg, #2c3e50 0%, #3498db 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .back-to-top i {
+            font-size: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                right: 20px;
+                bottom: 60px;
+                width: 40px;
+                height: 40px;
+            }
+            
+            .back-to-top i {
+                font-size: 16px;
+            }
+        }
+
+        /* 添加或修改语言选择器相关的样式 */
+        .language-selector {
+            position: relative;
+            z-index: 1000;  /* 确保在轮播图之上 */
+        }
+
+        .language-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 10px 0;
+            min-width: 150px;
+            z-index: 1000;  /* 确保下拉菜单在轮播图之上 */
+            display: none;
+        }
+
+        .language-menu.show {
+            display: block;
+        }
+
+        .language-option {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .language-option:hover {
+            background: #f5f5f5;
+        }
+
+        .language-option img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        /* 调整轮播图的z-index，确保它低于语言选择器 */
+        .slideshow-section {
+            position: relative;
+            z-index: 1;  /* 降低轮播图的层级 */
         }
     </style>
 </head>
@@ -878,15 +1201,52 @@
         </nav>
     </header>
 
-    <section class="banner" id="home">
-        <img src="images/quarry.jpg" alt="石灰石矿场" class="banner-bg">
-        <div class="banner-overlay"></div>
-        <div class="banner-content">
-            <h1 data-translate="banner_title">Muxungue Slaked lime —— 高品质熟石灰与石灰粉供应商</h1>
-            <h2 data-translate="banner_subtitle">为各行各业提供可靠的石灰产品</h2>
-            <button class="btn btn-primary" onclick="scrollToProducts()">
-                <span data-translate="learn_more">了解更多</span>
-            </button>
+    <section class="slideshow-section">
+        <div class="slideshow-container">
+            <div class="slides-wrapper">
+                <div class="slides">
+                    <img src="images/slide1.jpg" alt="工厂图片1">
+                    <div class="slide-caption">
+                        <h3 data-translate="slide1_title">优质石灰生产</h3>
+                        <p data-translate="slide1_desc">采用先进工艺，确保产品品质稳定可靠</p>
+                    </div>
+                </div>
+                <div class="slides">
+                    <img src="images/slide2.jpg" alt="工厂图片2">
+                    <div class="slide-caption">
+                        <h3 data-translate="slide2_title">现代化生产线</h3>
+                        <p data-translate="slide2_desc">全自动化生产设备，提升生产效率</p>
+                    </div>
+                </div>
+                <div class="slides">
+                    <img src="images/slide3.jpg" alt="工厂图片3">
+                    <div class="slide-caption">
+                        <h3 data-translate="slide3_title">独立包装系统</h3>
+                        <p data-translate="slide3_desc">标准化包装流程，确保产品完整性</p>
+                    </div>
+                </div>
+                <div class="slides">
+                    <img src="images/slide4.jpg" alt="工厂图片4">
+                    <div class="slide-caption">
+                        <h3 data-translate="slide4_title">专业装载系统</h3>
+                        <p data-translate="slide4_desc">自动化装载设备，提高发货效率</p>
+                    </div>
+                </div>
+                <div class="slides">
+                    <img src="images/slide5.jpg" alt="工厂图片5">
+                    <div class="slide-caption">
+                        <h3 data-translate="slide5_title">品质管控体系</h3>
+                        <p data-translate="slide5_desc">严格的质量检测流程，确保产品合格</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dots-container">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
     </section>
 
@@ -988,12 +1348,12 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Muxungue Slaked lime</h3>
-                    <p data-translate="about_desc">我们是一家专注于<strong>熟石灰和石灰生产</strong>的现代化企业，拥有业内领���的生产设备和经验丰富的技术团队。公司位于<strong>莫桑比克索法拉省穆雄盖地区</strong>，占地面积超过<strong>10万平方米</strong>，配备了全自动化生产线和严格的品质管控系统。凭借<strong>50万吨的年产能</strong>和稳定可靠的产品质量，我们已成为<strong>南部非洲地区重要的石灰产品供应商</strong>，为数百家工业、建筑和农业域的企业提供优质的产品和服务</p>
-                    <p data-translate="about_quality">多年来，我们始终坚持<strong>"质量为本、服务至上"</strong>的经营理念，不断引进国际先进技术和管理经验，建立了完善的质量管理体系。我们的产品不仅在本土市场获得广泛认可，还远销周边多个国家，在行业内树立了良好的品牌形象和信誉口碑。</p>
+                    <p data-translate="about_desc">我们是一家专注于<strong>熟石灰和石灰生产</strong>的现代化企业，拥有业内领的生产设备和经验丰富的术团队。公司位于<strong>莫桑比克索法拉省穆雄盖地区</strong>，占地面积超过<strong>10万平方米</strong>，配备了全自化生产线和格的品质管控系统。凭借<strong>50万吨的年产能</strong>和稳定可靠的产品质量，我们已成为<strong>南部非洲地区重要的石灰产品供应商</strong>，为数百家工业、建筑和农业域的企业提供优质的产品和服务</p>
+                    <p data-translate="about_quality">多年来，我们始终坚持<strong>"质量为本、服务至上"</strong>的经营理念，不断引进国际先进技术和管理经验，建立了完善的质量管理体系。我们的产品不仅在本土市场得广泛认可，还远销周边多个国家，在行业内树立了良好的品牌形象和信誉口碑。</p>
                     <div class="about-features">
                         <div class="feature">
                             <i class="fas fa-medal"></i>
-                            <h4 data-translate="quality_assurance">品质保证</h4>
+                            <h4 data-translate="quality_assurance">质保证</h4>
                             <p data-translate="quality_desc">严格的质量控制体系，确保产品品质稳定可靠</p>
                         </div>
                         <div class="feature">
@@ -1036,8 +1396,8 @@
                         <h3 data-translate="wechat">微信</h3>
                         <div class="social-account">
                             <span class="label" data-translate="wechat_id">微信号</span>
-                            <span class="account-text">MuxungueLime</span>
-                            <button class="copy-btn" data-clipboard-text="MuxungueLime">
+                            <span class="account-text">wqx19332027424</span>
+                            <button class="copy-btn" data-clipboard-text="wqx19332027424">
                                 <i class="far fa-copy"></i>
                             </button>
                         </div>
@@ -1050,8 +1410,8 @@
                         <h3>WhatsApp</h3>
                         <div class="social-account">
                             <span class="label">WhatsApp</span>
-                            <span class="account-text">+258 87654321</span>
-                            <button class="copy-btn" data-clipboard-text="+258 87654321">
+                            <span class="account-text">+258 868427683</span>
+                            <button class="copy-btn" data-clipboard-text="+258 868427683">
                                 <i class="far fa-copy"></i>
                             </button>
                         </div>
@@ -1079,13 +1439,13 @@
                         <h3 data-translate="email">电子邮箱</h3>
                         <div class="social-account">
                             <span class="label" data-translate="email">邮箱</span>
-                            <span class="account-text">contact@muxunguelime.com</span>
-                            <button class="copy-btn" data-clipboard-text="contact@muxunguelime.com">
+                            <span class="account-text">1091132793@qq.com</span>
+                            <button class="copy-btn" data-clipboard-text="1091132793@qq.com">
                                 <i class="far fa-copy"></i>
                             </button>
                         </div>
                         <p class="email-tip" data-translate="email_tip">请确保已打开邮件客户端</p>
-                        <a href="mailto:contact@muxunguelime.com" class="social-link" data-translate="send_email">发邮件</a>
+                        <a href="mailto:1091132793@qq.com" class="social-link" data-translate="send_email">发邮件</a>
                     </div>
                 </div>
             </div>
@@ -1107,24 +1467,14 @@
                     <p><i class="fas fa-award env"></i> <span data-translate="env_cert">环境管理体系认证</span></p>
                     <p><i class="fas fa-star quality"></i> <span data-translate="quality_cert">产品质量检测报告</span></p>
                     <p><i class="fas fa-check-circle safety"></i> <span data-translate="safety_cert">安全生产标准化认证</span></p>
-                    <p><i class="fas fa-shield-alt health"></i> <span data-translate="health_cert">职业健康安全管体系认证</span></p>
+                    <p><i class="fas fa-shield-alt health"></i> <span data-translate="health_cert">职业健安全管系认</span></p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p data-translate="copyright">© 2024 Muxungue Slaked lime. 版权所有 | 莫桑比克索法拉省穆雄盖地区领先的石灰产品供应商</p>
+                <p data-translate="copyright">© 2024 Muxungue Slaked lime. 版权所有 | 莫桑比克索法拉省穆雄盖地区先的石灰产品供应商</p>
             </div>
         </div>
     </footer>
-
-    <script>
-    function scrollToProducts() {
-        const productsSection = document.getElementById('products');
-        productsSection.scrollIntoView({ 
-            behavior: 'smooth',
-            block: 'start'
-        });
-    }
-    </script>
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -1137,7 +1487,7 @@
                 existingTooltip.remove();
             }
             
-            // 创建新的提示元素
+            // 创建新提示元素
             var tooltip = document.createElement('span');
             tooltip.className = 'copy-tooltip';
             tooltip.textContent = '已复制';
@@ -1233,5 +1583,88 @@
 
     <script src="js/languages.js"></script>
     <script src="js/main.js"></script>
+    <script>
+    let currentIndex = 0;
+    const slidesWrapper = document.querySelector('.slides-wrapper');
+    const slideCount = document.querySelectorAll('.slides').length;
+    const dots = document.querySelectorAll('.dot');
+
+    function slideNext() {
+        currentIndex = (currentIndex + 1) % slideCount;
+        updateSlidePosition();
+    }
+
+    function updateSlidePosition() {
+        slidesWrapper.style.transform = `translateX(-${currentIndex * 20}%)`;
+        // 更新导航点状态
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    // 添加导航点点击事件
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+            currentIndex = index;
+            updateSlidePosition();
+        });
+    });
+
+    // 自动播放
+    setInterval(slideNext, 5000);
+
+    // 触摸滑动支持
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    slidesWrapper.addEventListener('touchstart', e => {
+        touchStartX = e.touches[0].clientX;
+    });
+
+    slidesWrapper.addEventListener('touchmove', e => {
+        touchEndX = e.touches[0].clientX;
+    });
+
+    slidesWrapper.addEventListener('touchend', () => {
+        const difference = touchStartX - touchEndX;
+        if (Math.abs(difference) > 50) { // 最小滑动距离
+            if (difference > 0) {
+                // 向左滑
+                currentIndex = (currentIndex + 1) % slideCount;
+            } else {
+                // 向右滑
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+            }
+            updateSlidePosition();
+        }
+    });
+    </script>
+
+    <!-- 在 body 标签内底部添加返回顶部按钮 -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+    // 返回顶部功能
+    const backToTop = document.getElementById('backToTop');
+
+    // 监听滚动事件
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {  // 当页面滚动超过300px时显示按钮
+            backToTop.classList.add('show');
+        } else {
+            backToTop.classList.remove('show');
+        }
+    });
+
+    // 点击返回顶部
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'  // 平滑滚动
+        });
+    });
+    </script>
 </body>
 </html>
