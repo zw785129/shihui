@@ -1721,7 +1721,7 @@
                 <i class="fas fa-industry"></i>
                 <h3 data-translate="industrial_field">工业领域</h3>
                 <div class="application-details">
-                    <p><i class="fas fa-angle-right"></i> <span data-translate="industrial_detail1">钢铁冶金造剂</span></p>
+                    <p><i class="fas fa-angle-right"></i> <span data-translate="industrial_detail1">钢铁冶金造��</span></p>
                     <p><i class="fas fa-angle-right"></i> <span data-translate="industrial_detail2">化原料生产</span></p>
                     <p><i class="fas fa-angle-right"></i> <span data-translate="industrial_detail3">工业废水处理</span></p>
                 </div>
@@ -1920,7 +1920,7 @@
         var clipboard = new ClipboardJS('.copy-btn');
         
         clipboard.on('success', function(e) {
-            // 先检查并移已存在的提示
+            // 先检查并移除已存在的提示
             const existingTooltip = e.trigger.querySelector('.copy-tooltip');
             if (existingTooltip) {
                 existingTooltip.remove();
@@ -1929,7 +1929,15 @@
             // 创建新提示元素
             var tooltip = document.createElement('span');
             tooltip.className = 'copy-tooltip';
-            tooltip.textContent = '已复制';
+            
+            // 根据当前语言显示不同的提示文本
+            const currentLang = document.documentElement.lang || 'zh';
+            const copyText = {
+                'zh': '已复制',
+                'pt': 'Copiado',
+                'en': 'Copied'
+            };
+            tooltip.textContent = copyText[currentLang] || copyText['zh'];
             
             // 添加新提示
             e.trigger.appendChild(tooltip);
@@ -1951,7 +1959,7 @@
         });
         
         clipboard.on('error', function(e) {
-            // 同样先检查并移除已存��的提示
+            // 同样先检查并移除已存在的提示
             const existingTooltip = e.trigger.querySelector('.copy-tooltip');
             if (existingTooltip) {
                 existingTooltip.remove();
@@ -1960,7 +1968,15 @@
             var tooltip = document.createElement('span');
             tooltip.className = 'copy-tooltip';
             tooltip.style.background = 'rgba(244, 67, 54, 0.9)';
-            tooltip.textContent = '复制失败';
+            
+            // 根据当前语言显示不同的错误提示文本
+            const currentLang = document.documentElement.lang || 'zh';
+            const errorText = {
+                'zh': '复制失败',
+                'pt': 'Falha ao copiar',
+                'en': 'Copy failed'
+            };
+            tooltip.textContent = errorText[currentLang] || errorText['zh'];
             
             e.trigger.appendChild(tooltip);
             
