@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -249,9 +249,30 @@
             align-self: center;
         }
 
+        /* 修改 Facebook 访问主页按钮的样式 */
         .facebook .social-link {
             background-color: #1877F2;
-            margin-top: auto;
+            margin: 10px auto;
+            padding: 8px 15px;
+            font-size: 13px;
+            white-space: nowrap;
+            width: 80%;  /* 设置固定宽度比例 */
+            display: block;
+            text-align: center;
+            border-radius: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .facebook .social-link {
+                width: 90%;  /* 移动端增加宽度 */
+                padding: 8px 15px;
+                font-size: 14px;
+                margin: 15px auto;  /* 增加上下间距 */
+            }
+
+            .social-item.facebook {
+                padding-bottom: 20px;  /* 增加底部内边距 */
+            }
         }
 
         .instagram .social-link {
@@ -784,7 +805,7 @@
             }
         }
 
-        /* 添加以下CSS样式 */
+        /* 添���以下CSS样式 */
         .email-button {
             position: relative;
             z-index: 1;
@@ -990,19 +1011,16 @@
 
         /* 修改 header 的样式 */
         header {
-            background: linear-gradient(145deg, #2c3e50 0%, #3498db 100%);  /* 恢复渐变背景 */
-            padding: 15px 20px;
-            width: 100%;
-            box-sizing: border-box;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 15px 30px;
+            background: linear-gradient(145deg, #2c3e50 0%, #3498db 100%);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
 
         .logo {
@@ -1179,7 +1197,7 @@
         /* 调整轮播图的z-index，确保它低于语言选择器 */
         .slideshow-section {
             position: relative;
-            z-index: 1;  /* 降低轮播图层级 */
+            z-index: 1;  /* 降轮播图层级 */
         }
 
         /* 添加新的样式 */
@@ -1413,6 +1431,135 @@
         body {
             padding-top: 90px;
         }
+
+        .quality-reports {
+            padding: 40px 20px;
+            background: #f8f9fa;
+        }
+
+        .reports-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .report-images {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .report-image {
+            width: 45%;
+            max-width: 500px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .report-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .modal-report-image {
+            width: 100%;
+            height: auto;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+
+        @media (max-width: 768px) {
+            .report-images {
+                gap: 20px;
+            }
+
+            .report-image {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        /* 只修改菜单相关的样式 */
+        .menu-toggle {
+            position: absolute;
+            right: 30px;  /* 增加右侧距离 */
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu {
+            position: absolute;
+            top: calc(100% - 5px);
+            right: 30px;  /* 增加右侧距离 */
+            background: linear-gradient(145deg, #2c3e50 0%, #3498db 100%);
+            flex-direction: column;
+            width: 240px;  /* 增加宽度以适应葡萄牙语 */
+            padding: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: none;
+            z-index: 1000;
+        }
+
+        .nav-menu.show {
+            display: flex;
+        }
+
+        .nav-menu li a {
+            color: white;
+            display: block;
+            padding: 12px 20px;
+            font-size: 14px;  /* 稍微减小字体大小 */
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: left;
+            white-space: nowrap;  /* 防止文字换行 */
+        }
+
+        .nav-menu li a:hover {
+            background: rgba(255, 255, 255, 0.1);  /* 悬停效果改为半透明白色 */
+            color: #f1c40f;  /* 悬停时文字变为金黄色 */
+        }
+
+        /* 语言选择器样式调整 */
+        .lang-switch {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);  /* 分隔线改为半透明白色 */
+            margin-top: 5px;
+            padding-top: 5px;
+        }
+
+        .current-language {
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;  /* 语言文字改为白色 */
+        }
+
+        /* 调整 logo 和菜单的间距 */
+        .logo {
+            margin-right: 100px;  /* 增加与菜单的间距 */
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                right: 20px;  /* 移动端稍微靠左一点 */
+            }
+
+            .nav-menu {
+                right: 20px;
+            }
+        }
     </style>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -1423,17 +1570,21 @@
     <header>
         <div class="logo">Muxungue Slaked lime</div>
         <nav>
-            <ul>
-                <li><a href="#home" data-translate="nav_home">首页</a></li>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="/" data-translate="nav_home">首页</a></li>
                 <li><a href="#products" data-translate="nav_products">产品展示</a></li>
+                <li><a href="#quality-reports" data-translate="nav_reports">产品报告</a></li>
                 <li><a href="#applications" data-translate="nav_applications">应用领域</a></li>
                 <li><a href="#about" data-translate="nav_about">关于我们</a></li>
                 <li><a href="#contact" data-translate="nav_contact">联系我们</a></li>
                 <li class="lang-switch">
                     <div id="language-selector" class="language-selector">
                         <div class="current-language">
-                            <img src="images/flags/zh.png" alt="中文" class="current-flag">
-                            <span class="current-lang">中文</span>
+                            <img src="images/flags/pt.png" alt="Português" class="current-flag">
+                            <span class="current-lang">Português</span>
                         </div>
                     </div>
                 </li>
@@ -1504,7 +1655,7 @@
                     <ul class="product-uses">
                         <li><i class="fas fa-check"></i> <span data-translate="construction_use">建筑工程：用于砂浆和混凝土的制备</span></li>
                         <li><i class="fas fa-check"></i> <span data-translate="metallurgy_use">钢铁冶金：用作造渣材料</span></li>
-                        <li><i class="fas fa-check"></i> <span data-translate="environmental_use">环保处理：废水处理、烟气脱硫</span></li>
+                        <li><i class="fas fa-check"></i> <span data-translate="environmental_use">环��处理：废水处理、烟气脱硫</span></li>
                     </ul>
                 </div>
             </div>
@@ -1544,6 +1695,16 @@
         </div>
     </section>
 
+    <section class="quality-reports" id="quality-reports">
+        <h2 class="section-title" data-translate="quality_reports_title">石灰活性度检测报��</h2>
+        <div class="reports-container">
+            <div class="report-images">
+                <img src="images/report1.jpg" alt="石灰活性度检测报告1" class="report-image" onclick="showReportModal(this.src)">
+                <img src="images/report2.jpg" alt="石灰活性度检测报告2" class="report-image" onclick="showReportModal(this.src)">
+            </div>
+        </div>
+    </section>
+
     <section class="applications" id="applications">
         <h2 class="section-title" data-translate="applications_title">应用领域</h2>
         <div class="applications-grid">
@@ -1579,7 +1740,7 @@
                 <h3 data-translate="environmental_field">环保域</h3>
                 <div class="application-details">
                     <p><i class="fas fa-angle-right"></i> <span data-translate="environmental_detail1">工业废气脱硫处理</span></p>
-                    <p><i class="fas fa-angle-right"></i> <span data-translate="environmental_detail2">污水pH值调节</span></p>
+                    <p><i class="fas fa-angle-right"></i> <span data-translate="environmental_detail2">污水pH值调</span></p>
                     <p><i class="fas fa-angle-right"></i> <span data-translate="environmental_detail3">固体废物无害化处理</span></p>
                 </div>
             </div>
@@ -1593,7 +1754,7 @@
                 <div class="about-text">
                     <h3>Muxungue Slaked lime</h3>
                     <p data-translate="about_desc">我们是一家专注于<strong>熟石灰和石灰生产</strong>的现代化企业，拥有业内领的生设备和经验丰富的团队。公司位于<strong>莫桑比克索拉省穆雄盖地区</strong>，占地面积超过<strong>10万平方米</strong>，配备了全自化生产线和格的品质管控系统。凭借<strong>50万吨的年产能</strong>和稳定可靠的产品质量，我们已成为<strong>南部非洲地区重要的石灰产品供应商</strong>，数百家工业、建筑和农业域的企业提供优质的产品和服务</p>
-                    <p data-translate="about_quality">多年来，我们始终坚持<strong>"质量为本、服务至上"</strong>的经营理念，不断引进国际先进技术和管理经验，建立了完善的质量管理体系。我们的产品不仅在本土市场得广泛认可，还远销周边多个国家，在行业内树立了良好的品牌形象和信誉口碑。</p>
+                    <p data-translate="about_quality">多年来，我们始终坚持<strong>"质量为本、服务至上"</strong>的经营理念，不断引进国��先进技术和管理经验，建立了完善的质量管理体系。我们的产品不仅在本土市场得广泛认可，还远销周边多个国家，在行业内树立了良好的品牌形象和信誉口碑。</p>
                     <div class="about-features">
                         <div class="feature">
                             <i class="fas fa-medal"></i>
@@ -1607,7 +1768,7 @@
                         </div>
                         <div class="feature">
                             <i class="fas fa-handshake"></i>
-                            <h4 data-translate="professional_service">专业���务</h4>
+                            <h4 data-translate="professional_service">专业务</h4>
                             <p data-translate="service_desc">专业的技术支持团队，为客户提供全方位解决方案</p>
                         </div>
                     </div>
@@ -1729,7 +1890,7 @@
                     <p data-translate="footer_solutions">为建筑、冶金、环保、农业等行业提供优质解决方案</p>
                 </div>
                 <div class="footer-center">
-                    <h4 data-translate="footer_title">产品认证</h4>
+                    <h4 data-translate="footer_title">产��认证</h4>
                     <p><i class="fas fa-certificate iso"></i> <span data-translate="iso_cert">ISO9001质量管理体系认证</span></p>
                     <p><i class="fas fa-award env"></i> <span data-translate="env_cert">环境管理体系认证</span></p>
                     <p><i class="fas fa-star quality"></i> <span data-translate="quality_cert">产品质量检测报告</span></p>
@@ -1790,7 +1951,7 @@
         });
         
         clipboard.on('error', function(e) {
-            // 同样先检查并移除已存在的提示
+            // 同样先检查并移除已存��的提示
             const existingTooltip = e.trigger.querySelector('.copy-tooltip');
             if (existingTooltip) {
                 existingTooltip.remove();
@@ -1863,7 +2024,38 @@
     <script src="js/main.js"></script>
     
     <!-- 添加客服系统脚本 -->
-    <script src="https://assets.salesmartly.com/js/project_178388_184508_1732617381.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            // 预加载字体
+            const fontLink = document.createElement('link');
+            fontLink.rel = 'preload';
+            fontLink.href = 'https://assets.salesmartly.com/chat/widget/code/fonts/iconfont.15dabac4.woff2';
+            fontLink.as = 'font';
+            fontLink.type = 'font/woff2';
+            fontLink.crossOrigin = 'anonymous';
+            document.head.appendChild(fontLink);
+
+            // 添加字体样式
+            const fontStyle = document.createElement('style');
+            fontStyle.textContent = `
+                @font-face {
+                    font-family: 'salesmartly-icons';
+                    src: url('https://assets.salesmartly.com/chat/widget/code/fonts/iconfont.15dabac4.woff2') format('woff2');
+                    font-display: swap;
+                }
+            `;
+            document.head.appendChild(fontStyle);
+
+            // 延迟加载客服系统
+            setTimeout(function() {
+                const script = document.createElement('script');
+                script.src = 'https://assets.salesmartly.com/js/project_178388_184508_1732617381.js';
+                script.async = true;
+                script.defer = true;
+                document.body.appendChild(script);
+            }, 2000);
+        });
+    </script>
 
     <!-- 在 </body> 标签前添加轮播图控制脚本 -->
     <script>
@@ -1923,6 +2115,141 @@
         dots.forEach((dot, index) => {
             dot.addEventListener('click', () => {
                 currentSlide(index + 1);
+            });
+        });
+    });
+    </script>
+
+    <!-- 添加报告查看弹窗 -->
+    <div id="reportModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeReportModal()">&times;</span>
+            <img id="modalReportImage" class="modal-report-image" alt="报告大图">
+        </div>
+    </div>
+
+    <script>
+    function showReportModal(imgSrc) {
+        const modal = document.getElementById('reportModal');
+        const modalImg = document.getElementById('modalReportImage');
+        modalImg.src = imgSrc;
+        modal.style.display = 'block';
+    }
+
+    function closeReportModal() {
+        const modal = document.getElementById('reportModal');
+        modal.style.display = 'none';
+    }
+
+    // 点击弹窗外部关闭弹窗
+    window.onclick = function(event) {
+        const modal = document.getElementById('reportModal');
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    }
+    </script>
+
+    <script>
+    // 修改菜单和语言选择的相关脚本
+    function toggleMenu() {
+        const menu = document.querySelector('.nav-menu');
+        menu.classList.toggle('show');
+    }
+
+    // 点击菜单项后自动关闭菜单
+    document.querySelectorAll('.nav-menu a').forEach(item => {
+        item.addEventListener('click', () => {
+            const menu = document.querySelector('.nav-menu');
+            menu.classList.remove('show');
+        });
+    });
+
+    // 点击页面其他地方关闭菜单
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-menu') && !e.target.closest('.menu-toggle')) {
+            const menu = document.querySelector('.nav-menu');
+            menu.classList.remove('show');
+        }
+    });
+
+    // 修改语言选择的处理
+    document.addEventListener('DOMContentLoaded', function() {
+        // 监听语言切换事件
+        document.addEventListener('languageChanged', function() {
+            // 语言切换后关闭菜单
+            const menu = document.querySelector('.nav-menu');
+            menu.classList.remove('show');
+        });
+    });
+    </script>
+
+    <script>
+    // 修改语言选择和菜单的处理脚本
+    document.addEventListener('DOMContentLoaded', function() {
+        // 监���语言切换完成事件
+        document.addEventListener('languageChanged', function() {
+            // 语言切换完成后关闭导航菜单
+            const menu = document.querySelector('.nav-menu');
+            if (menu) {
+                menu.classList.remove('show');
+            }
+        });
+
+        // 移除语言选择器的点击事件，让它保持打开状态
+        const languageSelector = document.getElementById('language-selector');
+        if (languageSelector) {
+            languageSelector.removeEventListener('click', function() {
+                const menu = document.querySelector('.nav-menu');
+                menu.classList.remove('show');
+            });
+        }
+    });
+
+    // 点击页面其他地方关闭导航菜单（排除语言选择器）
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.nav-menu') && 
+            !e.target.closest('.menu-toggle') && 
+            !e.target.closest('.language-selector')) {
+            const menu = document.querySelector('.nav-menu');
+            if (menu) {
+                menu.classList.remove('show');
+            }
+        }
+    });
+    </script>
+
+    <!-- 添加滚动处理脚本 -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 处理导航链接点击事件
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                // 如果是首页链接
+                if (this.getAttribute('href') === '/') {
+                    e.preventDefault();
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    // 其他锚点链接
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                
+                // 关闭导航菜单
+                const menu = document.querySelector('.nav-menu');
+                menu.classList.remove('show');
             });
         });
     });

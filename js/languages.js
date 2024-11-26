@@ -7,6 +7,7 @@ const translations = {
         nav_about: "关于我们",
         nav_contact: "联系我们",
         nav_to_us: "导航到我们",
+        nav_reports: "产品报告",
         
         // Banner
         banner_title: "Muxungue Slaked lime —— 高品质熟石灰与石灰粉供应商",
@@ -129,7 +130,10 @@ const translations = {
         company_location: "公司位置",
         company_address: "莫桑比克索法拉省穆雄盖地区",
         coordinates: "坐标",
-        nav_tip: "复制坐标到谷歌地图即可导航"
+        nav_tip: "复制坐标到谷歌地图即可导航",
+        
+        // 石灰活性度检测报告
+        quality_reports_title: '石灰活性度检测报告'
     },
     
     en: {
@@ -140,6 +144,7 @@ const translations = {
         nav_about: "About Us",
         nav_contact: "Contact",
         nav_to_us: "Navigate to Us",
+        nav_reports: "Product Reports",
         
         // Banner
         banner_title: "Muxungue Slaked lime - High Quality Quicklime & Lime Powder Supplier",
@@ -262,7 +267,10 @@ const translations = {
         company_location: "Company Location",
         company_address: "Muxungue, Sofala Province, Mozambique",
         coordinates: "Coordinates",
-        nav_tip: "Copy coordinates to Google Maps for navigation"
+        nav_tip: "Copy coordinates to Google Maps for navigation",
+        
+        // 石灰活性度检测报告
+        quality_reports_title: 'Lime Reactivity Test Report'
     },
     
     pt: {
@@ -273,6 +281,7 @@ const translations = {
         nav_about: "Sobre Nós",
         nav_contact: "Contato",
         nav_to_us: "Navegue até Nós",
+        nav_reports: "Relatórios de Produtos",
         
         // Banner
         banner_title: "Muxungue Slaked lime — Fornecedor de Cal Viva e Pó de Cal de Alta Qualidade",
@@ -395,7 +404,146 @@ const translations = {
         company_location: "Localização da Empresa",
         company_address: "Muxungue, Província de Sofala, Moçambique",
         coordinates: "Coordenadas",
-        nav_tip: "Copie as coordenadas para o Google Maps para navegação"
+        nav_tip: "Copie as coordenadas para o Google Maps para navegação",
+        
+        // 石灰活性度检测报告
+        quality_reports_title: 'Relatório de Teste de Reatividade da Cal'
+    },
+    es: {
+        // Navegação
+        nav_home: "Inicio",
+        nav_products: "Productos",
+        nav_applications: "Aplicaciones",
+        nav_about: "Sobre Nosotros",
+        nav_contact: "Contacto",
+        nav_to_us: "Navegar a Nosotros",
+        nav_reports: "Informes de Productos",
+        
+        // Banner
+        banner_title: "Muxungue Slaked lime - Proveedor de Cal Viva y Polvo de Cal de Alta Calidad",
+        banner_subtitle: "Proveemos Productos de Cal Confiables para Varios Sectores Industriales",
+        learn_more: "Saber Más",
+        
+        // Apresentação de Slides
+        slide1_title: "Produção de Cal de Qualidade",
+        slide1_desc: "Tecnologia avançada garante qualidade estável do produto",
+        slide2_title: "Linha de Produção Moderna",
+        slide2_desc: "Equipamento automatizado melhora a eficiência da produção",
+        slide3_title: "Sistema de Embalagem Independente",
+        slide3_desc: "Processo padronizado garante a integridade do produto",
+        slide4_title: "Sistema de Carregamento Profissional",
+        slide4_desc: "Equipamento automatizado melhora a eficiência do envio",
+        slide5_title: "Sistema de Controle de Qualidade",
+        slide5_desc: "Processo rigoroso de inspeção garante a qualificação do produto",
+        
+        // Produtos
+        section_products: "Nossos Produtos",
+        quicklime_title: "Cal Viva em Pedra",
+        lime_powder_title: "Pó de Cal",
+        lime_powder_96: "Pó de Cal Hidratada 96%",
+        lime_powder_93: "Pó de Cal Hidratada 93%",
+        
+        // Usos do Produto
+        construction_use: "Construção Civil: Preparação de argamassa e concreto",
+        metallurgy_use: "Siderurgia: Material para escorificação",
+        environmental_use: "Ambiental: Tratamento de efluentes e dessulfurização",
+        agriculture_use: "Agricultura: Correção do solo e ajuste de pH",
+        chemical_use: "Química: Produção de carbonato e hidróxido de cálcio",
+        building_use: "Materiais: Produção de concreto aerado e argamassa",
+        industrial_grade: "Grau Industrial: Adequado para química e metalurgia",
+        high_purity: "Alta Pureza: Teor de CaO ≥96%",
+        good_fineness: "Boa Finura: Resíduo em malha 200 ≤1%",
+        construction_grade: "Grau Construção: Ideal para construção e agricultura",
+        cost_effective: "Custo-benefício: Teor de CaO ≥93%",
+        wide_usage: "Uso Versátil: Correção do solo e materiais de construção",
+        
+        // Aplicações
+        applications_title: "Áreas de Aplicação",
+        construction_field: "Construção Civil",
+        industrial_field: "Indústria",
+        agriculture_field: "Agricultura",
+        environmental_field: "Meio Ambiente",
+        
+        // Detalhes das Aplicações
+        construction_detail1: "Aditivos para argamassa e concreto",
+        construction_detail2: "Produção de material para paredes",
+        construction_detail3: "Estabilizador de solo para fundações",
+        industrial_detail1: "Agente escorificante para metalurgia",
+        industrial_detail2: "Produção de matéria-prima química",
+        industrial_detail3: "Tratamento de efluentes industriais",
+        agriculture_detail1: "Ajuste de pH do solo",
+        agriculture_detail2: "Controle de pragas e doenças",
+        agriculture_detail3: "Produção de fertilizantes orgânicos",
+        environmental_detail1: "Dessulfurização de gases industriais",
+        environmental_detail2: "Ajuste de pH de águas residuais",
+        environmental_detail3: "Tratamento de resíduos sólidos",
+        
+        // Sobre Nós
+        about_title: "Sobre Nós",
+        about_desc: "Somos uma empresa moderna focada na produção de <strong>cal viva e pó de cal</strong>, equipada com equipamentos de produção líderes do setor e uma equipe técnica experiente. Localizada na <strong>região de Muxungue, província de Sofala, Moçambique</strong>, nossa instalação cobre mais de <strong>100.000 metros quadrados</strong>, com linhas de produção automatizadas e sistemas rigorosos de controle de qualidade. Com capacidade anual de <strong>500.000 toneladas</strong> e qualidade consistentemente confiável, nos tornamos um <strong>importante fornecedor de produtos de cal no sul da África</strong>, fornecendo produtos e serviços de alta qualidade para centenas de empresas nos setores industrial, construção e agrícola.",
+        about_quality: "Ao longo dos anos, mantemos a filosofia empresarial de <strong>'Qualidade Primeiro, Serviço Supremo'</strong>, introduzindo continuamente tecnologia e experiência de gestão internacional avançada para estabelecer um sistema abrangente de gestão da qualidade. Nossos produtos não só ganharam amplo reconhecimento no mercado local, mas também são exportados para vários países vizinhos, estabelecendo uma excelente imagem de marca e reputação no setor.",
+        
+        // Serviços
+        quality_assurance: "Garantia de Qualidade",
+        quality_desc: "Sistema rigoroso de controle de qualidade",
+        fast_delivery: "Entrega Rápida",
+        delivery_desc: "Rede logística completa para entrega pontual",
+        professional_service: "Serviço Profissional",
+        service_desc: "Equipe técnica profissional oferecendo soluções completas",
+        
+        // Estatísticas da Empresa
+        capacity: "Mil Toneladas/Ano",
+        experience: "Anos de Experiência",
+        partners: "+ Parceiros",
+        
+        // Contato
+        contact_title: "Contato",
+        wechat: "WeChat",
+        wechat_desc: "Adicione nossos consultores de vendas no WeChat para detalhes do produto e cotações",
+        whatsapp_desc: "Entre em contato com nossos representantes internacionais para exportação",
+        facebook_desc: "Siga nossa página no Facebook para atualizações da empresa e informações sobre produtos",
+        account: "Conta",
+        visit_page: "Visitar Página",
+        email: "E-mail",
+        send_email1: "Enviar E-mail ①",
+        send_email2: "Enviar E-mail ②",
+        
+        // Etiquetas e Números
+        wechat_number1: "① WeChat",
+        wechat_number2: "② WeChat",
+        whatsapp_number1: "① WhatsApp",
+        whatsapp_number2: "② WhatsApp",
+        email_number1: "① E-mail",
+        email_number2: "② E-mail",
+        
+        // Rodapé
+        footer_title: "Certificações",
+        iso_cert: "Certificação ISO9001 do Sistema de Gestão da Qualidade",
+        env_cert: "Certificação do Sistema de Gestão Ambiental",
+        quality_cert: "Relatório de Teste de Qualidade do Produto",
+        safety_cert: "Certificação de Padronização de Produção Segura",
+        health_cert: "Certificação do Sistema de Gestão de Saúde e Segurança Ocupacional",
+        footer_supplier: "Fornecedor de Cal Viva e Pó de Cal de Alta Qualidade",
+        footer_products: "Produção profissional de pó de cal hidratada 96%, 93% e cal viva",
+        footer_solutions: "Fornecendo soluções de qualidade para construção, metalurgia, proteção ambiental e agricultura",
+        copyright: "© 2024 Muxungue Slaked lime. Todos os direitos reservados",
+        
+        // Seletor de Idioma
+        name: 'Português',
+        flag: './images/flags/pt.png',
+        
+        // Modal
+        modal_wechat_title: "Código QR do WeChat",
+        modal_whatsapp_title: "Código QR do WhatsApp",
+        
+        // 公司定位
+        company_location: "Localização da Empresa",
+        company_address: "Muxungue, Província de Sofala, Moçambique",
+        coordinates: "Coordenadas",
+        nav_tip: "Copie as coordenadas para o Google Maps para navegação",
+        
+        // 石灰活性度检测报告
+        quality_reports_title: 'Relatório de Teste de Reatividade da Cal'
     }
 };
 
