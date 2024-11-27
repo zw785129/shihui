@@ -205,6 +205,12 @@
         .social-item.facebook {
             background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
             border-top: 4px solid #1877F2;
+            height: 400px;  /* 设置固定高度 */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+            box-sizing: border-box;
         }
         
         .social-item.facebook i {
@@ -256,10 +262,11 @@
             padding: 8px 15px;
             font-size: 13px;
             white-space: nowrap;
-            width: 80%;  /* 设置固定宽度比例 */
+            width: 80%;
             display: block;
             text-align: center;
             border-radius: 20px;
+            margin-top: auto;  /* 确保按钮在底部 */
         }
 
         @media (max-width: 768px) {
@@ -269,6 +276,7 @@
                 font-size: 14px;
                 margin: 15px auto;  /* 增加上下间距 */
             }
+
 
             .social-item.facebook {
                 padding-bottom: 20px;  /* 增加底部内边距 */
@@ -626,13 +634,37 @@
             .social-row {
                 flex-direction: column;
                 align-items: center;
-                padding: 0 15px;
+                padding: 0;
+                margin: 0;
             }
 
+            /* 所有社交卡片的基础样式 */
             .social-item {
                 width: 100%;
-                max-width: 320px;
+                max-width: 100%;
+                margin: 15px 0;
+                min-height: 250px;  /* 增加最小高度 */
+                box-sizing: border-box;
+            }
+
+            /* Facebook卡片的移动端特殊样式 */
+            .social-item.facebook {
+                padding-bottom: 20px;
+                height: 300px;  /* 设置固定高度 */
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .facebook .social-link {
+                width: 90%;
+                padding: 8px 15px;
+                font-size: 14px;
                 margin: 15px auto;
+                position: absolute;  /* 固定按钮位置 */
+                bottom: 20px;  /* 距离底部距离 */
+                left: 50%;
+                transform: translateX(-50%);
             }
 
             .qr-wrapper {
@@ -654,14 +686,21 @@
 
             .social-account {
                 margin: 10px 0;
-                padding: 8px;
+                padding: 12px;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             /* 调整卡片边距 */
             .qr-row .social-item {
+                width: calc(100% - 30px);
+                margin: 15px;
                 padding: 20px;
-                margin-bottom: 20px;
-                box-sizing: border-box;
+                min-height: 280px;
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                justify-content: space-between;
             }
 
             /* 确保内容居中 */
@@ -669,18 +708,37 @@
                 width: 100%;
                 max-width: 100%;
                 padding: 0;
+                margin: 0;
             }
         }
 
         /* 更小屏幕的处理 */
         @media (max-width: 360px) {
             .social-item {
-                max-width: 300px;
+                width: calc(100% - 20px);
+                margin: 10px;
+                padding: 15px;
             }
 
             .qr-wrapper img {
                 width: 240px;
                 height: 240px;
+            }
+
+            .social-account {
+                padding: 10px;
+            }
+
+            .social-item h3 {
+                font-size: 16px;
+            }
+
+            .contact-desc {
+                font-size: 13px;
+            }
+
+            .social-item.facebook {
+                height: 280px;  /* 稍微减小高度 */
             }
         }
 
@@ -1560,6 +1618,136 @@
                 right: 20px;
             }
         }
+
+        /* 修改 header 布局 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background: linear-gradient(145deg, #2c3e50 0%, #3498db 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        /* 调整 logo 样式 */
+        .logo {
+            color: #fff;
+            font-size: 24px;
+            font-weight: bold;
+            margin-right: auto; /* 让 logo 靠左 */
+        }
+
+        /* 新的顶部语言选择器样式 */
+        .language-selector-top {
+            margin: 0 25px;
+            position: relative;
+        }
+
+        .language-selector-top .current-language {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #fff;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .language-selector-top .current-language:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .language-selector-top .current-flag {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+
+        .language-selector-top .current-lang {
+            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .language-selector-top .fa-chevron-down {
+            font-size: 12px;
+            margin-left: 3px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .language-selector-top .language-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #f8f9fa;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            padding: 5px 0;
+            min-width: 120px;
+            display: none;
+            margin-top: 5px;
+            border: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .language-selector-top .language-menu.show {
+            display: block;
+        }
+
+        .language-selector-top .language-option {
+            display: flex;
+            align-items: center;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f8f9fa;
+        }
+
+        .language-selector-top .language-option:hover {
+            background: #e9ecef;
+        }
+
+        .language-selector-top .language-option:not(:last-child) {
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .language-selector-top .language-option span {
+            font-size: 15px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        /* 移动端适配 */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 15px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .language-selector-top {
+                margin: 0 10px;
+            }
+
+            .language-selector-top .current-language {
+                padding: 4px 8px;
+            }
+
+            .language-selector-top .current-lang {
+                font-size: 12px;
+            }
+        }
     </style>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
@@ -1569,6 +1757,30 @@
 <body>
     <header>
         <div class="logo">Muxungue Slaked lime</div>
+        
+        <!-- 添加独立的语言选择器 -->
+        <div id="language-selector" class="language-selector-top">
+            <div class="current-language">
+                <img src="images/flags/pt.png" alt="Português" class="current-flag">
+                <span class="current-lang">PT</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="language-menu">
+                <div class="language-option" data-lang="pt">
+                    <img src="images/flags/pt.png" alt="Português">
+                    <span>Português</span>
+                </div>
+                <div class="language-option" data-lang="zh">
+                    <img src="images/flags/zh.png" alt="中文">
+                    <span>中文</span>
+                </div>
+                <div class="language-option" data-lang="en">
+                    <img src="images/flags/en.png" alt="English">
+                    <span>English</span>
+                </div>
+            </div>
+        </div>
+        
         <nav>
             <div class="menu-toggle" onclick="toggleMenu()">
                 <i class="fas fa-bars"></i>
@@ -1580,14 +1792,6 @@
                 <li><a href="#applications" data-translate="nav_applications">应用领域</a></li>
                 <li><a href="#about" data-translate="nav_about">关于我们</a></li>
                 <li><a href="#contact" data-translate="nav_contact">联系我们</a></li>
-                <li class="lang-switch">
-                    <div id="language-selector" class="language-selector">
-                        <div class="current-language">
-                            <img src="images/flags/pt.png" alt="Português" class="current-flag">
-                            <span class="current-lang">Português</span>
-                        </div>
-                    </div>
-                </li>
             </ul>
         </nav>
     </header>
@@ -1754,7 +1958,7 @@
                 <div class="about-text">
                     <h3>Muxungue Slaked lime</h3>
                     <p data-translate="about_desc">我们是一家专注于<strong>熟石灰和石灰生产</strong>的现代化企业，拥有业内领的生设备和经验丰富的团队。公司位于<strong>莫桑比克索拉省穆雄盖地区</strong>，占地面积超过<strong>10万平方米</strong>，配备了全自化生产线和格的品质管控系统。凭借<strong>50万吨的年产能</strong>和稳定可靠的产品质量，我们已成为<strong>南部非洲地区重要的石灰产品供应商</strong>，数百家工业、建筑和农业域的企业提供优质的产品和服务</p>
-                    <p data-translate="about_quality">多年来，我们始终坚持<strong>"质量为本、服务至上"</strong>的经营理念，不断引进国��先进技术和管理经验，建立了完善的质量管理体系。我们的产品不仅在本土市场得广泛认可，还远销周边多个国家，在行业内树立了良好的品牌形象和信誉口碑。</p>
+                    <p data-translate="about_quality">多年来，我们始终坚持<strong>"质量为本、服务至上"</strong>的经营理念，��断引进国���先进技术和管理经验，建立了完善的质量管理体系。我们的产品不仅在本土市场得广泛认可，还远销周边多个国家，在行业内树立了良好的品牌���象和信誉口碑。</p>
                     <div class="about-features">
                         <div class="feature">
                             <i class="fas fa-medal"></i>
@@ -1808,7 +2012,7 @@
                             </button>
                         </div>
                         <div class="social-account">
-                            <span class="label" data-translate="wechat_number2">② 微信号</span>
+                            <span class="label" data-translate="wechat_number2">② 微���号</span>
                             <span class="account-text">guangyu6071</span>
                             <button class="copy-btn" data-clipboard-text="guangyu6071">
                                 <i class="far fa-copy"></i>
@@ -1840,7 +2044,7 @@
                     <div class="social-item facebook">
                         <i class="fab fa-facebook"></i>
                         <h3>Facebook</h3>
-                        <p class="contact-desc" data-translate="facebook_desc">关注我们的 Facebook 主页，了解公司最新态和产品信息</p>
+                        <p class="contact-desc" data-translate="facebook_desc">关注我们</p>
                         <div class="social-account">
                             <span class="label" data-translate="account">账号</span>
                             <span class="account-text">https://www.facebook.com/profile.php?id=100003553415676&mibextid=ZbWKwL</span>
@@ -2189,11 +2393,11 @@
             });
         });
 
-        // 点击页面其他地方关闭菜单
+        // 点击页面其他地方关��菜单
         document.addEventListener('click', (e) => {
             const menu = document.querySelector('.nav-menu');
             const menuToggle = document.querySelector('.menu-toggle');
-            const languageSelector = document.querySelector('.language-selector');
+            const languageSelector = document.querySelector('.language-selector-top');
             
             // 如果点击的不是菜单、菜单按钮或语言选择器内的元素
             if (!menu.contains(e.target) && 
@@ -2241,9 +2445,15 @@
 
     // 点击页面其他地方关闭导航菜单（排除语言选择器）
     document.addEventListener('click', function(e) {
-        if (!e.target.closest('.nav-menu') && 
+        const menu = document.querySelector('.nav-menu');
+        const menuToggle = document.querySelector('.menu-toggle');
+        const languageSelector = document.querySelector('.language-selector-top');
+        
+        // 确保所有元素存在后再进行判断
+        if (menu && menuToggle && languageSelector &&
+            !e.target.closest('.nav-menu') && 
             !e.target.closest('.menu-toggle') && 
-            !e.target.closest('.language-selector')) {
+            !e.target.closest('.language-selector-top')) {
             const menu = document.querySelector('.nav-menu');
             if (menu) {
                 menu.classList.remove('show');
@@ -2289,3 +2499,4 @@
     </script>
 </body>
 </html>
+
